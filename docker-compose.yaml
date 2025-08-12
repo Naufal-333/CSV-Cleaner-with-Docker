@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: data-cleansing-app
+    volumes:
+      - ./source:/app/source
+      - ./target:/app/target
+    environment:
+      - PYTHONUNBUFFERED=1
+      - IN_DOCKER=1
